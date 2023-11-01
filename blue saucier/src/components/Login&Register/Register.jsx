@@ -1,19 +1,49 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { dataBase} from '../firebase/index';
-import { collection, addDoc } from "firebase/firestore"; 
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from '../firebase/index';
 
 function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  async function register(event) {
+    event.preventDefault();
+
+    if(password.length < 6) {
+      setError('Password needs to be at least 6 characters long')
+    } else {
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      
+      updateProfile(auth.currentUser, {
+        displayName: `${firstName} ${lastName}`
+      })
+      const user = userCredential.user;
+      console.log(user)
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("Error", errorCode)
+      console.log("Error Message", errorMessage)
+    });
+  }
+      setError('')
+      setFirstName('')
+      setLastName('')
+      setEmail('')
+      setPassword('')
+      navigate('/success')
+    }
 
   return (
     <div>
-      <form action="">
+      <form onSubmit={register}>
         <label>
           First Name:
           <input 
@@ -33,23 +63,28 @@ function Register() {
         <label>
           Email:
           <input 
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
+        <p>{error}</p>
         <label>
           Password:
           <input 
-            type='text'
+            type='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <button>Submit</button>
       </form>
+      <footer>
+        <Link to='/'>Home</Link>
+        <Link to='/about'>About</Link>
+      </footer>
     </div>
-  )
-}
+    )
+  }
 
 export default Register
