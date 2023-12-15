@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase/index';
 
-function Login() {
+function Login({setName, setToken, setUsername}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
 function login(e) {
   e.preventDefault();
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in 
       const user = userCredential.user;
-
-      console.log(user)
+      
+      setUsername(user.uid)
+      setName(user.displayName)
+      setToken(user.accessToken)
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -23,10 +25,13 @@ function login(e) {
       console.log(errorCode)
       console.log(errorMessage)
     });
+    navigate('/mainMenu')
 }
 
   return (
     <div>
+      <Link to='/'>Home</Link>
+      <Link to='/about'>About</Link>
       <form onSubmit={login}>
         <label>
           Email:
