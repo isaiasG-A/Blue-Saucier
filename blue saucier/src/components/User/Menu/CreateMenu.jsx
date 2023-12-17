@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function CreateMenu({username}) {
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState('');
   const [dish, setDish] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
