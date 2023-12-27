@@ -11,6 +11,7 @@ import MenuPlanning from './components/User/Menu/MenuPlanning';
 import CreateMenu from './components/User/Menu/CreateMenu';
 import ManageMenu from './components/User/Menu/ManageMenu';
 import MenuConfirmation from './components/User/Menu/MenuConfirmation';
+import OrderListMenu from './components/User/OrderingLists/OrderListMenu';
 import { auth } from './components/firebase/index';
 import { useState } from 'react';
 import { signOut } from "firebase/auth";
@@ -74,6 +75,10 @@ function signout() {
         <Route 
           path='/menuConfirmation'
           element={<MenuConfirmation />}
+        />
+        <Route 
+          path='/orderingListMenu'
+          element={<OrderListMenu />}
         />
       </Routes>
     </>

@@ -7,7 +7,7 @@ function MainMenu({name, token, signout }) {
     <div>
       <h1>Hello, {name}</h1>
       <Link to='/menuPlanning'>Menu Planning</Link>
-      <Link>Ordering Lists</Link>
+      <Link to='/orderingListMenu'>Ordering Lists</Link>
       <Link>Calendar</Link>
       <Link>My Profile</Link>
       <button onClick={signout}>Logout</button>
