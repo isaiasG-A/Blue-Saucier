@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function OrderListMenu() {
   return (
-    <div>OrderListMenu</div>
+    <div>
+      <Link to='/createList'>Create List</Link>
+      <Link to='/manageList'>Manage List</Link>
+    </div>
   )
 }
 
