@@ -17,7 +17,6 @@ function CreateMenu({username}) {
 
 async function createMenu(e) {
   e.preventDefault();
-
    try {
     const docRef = await addDoc(collection(db, `${username} menus`), {
       cat: category,
@@ -29,6 +28,7 @@ async function createMenu(e) {
   } catch (e) {
     console.error("Error adding document: ", e);
   }
+
   setCategory('')
   setDish('')
   setPrice('')

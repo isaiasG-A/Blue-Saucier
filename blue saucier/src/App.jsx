@@ -14,6 +14,7 @@ import MenuConfirmation from './components/User/Menu/MenuConfirmation';
 import OrderListMenu from './components/User/OrderingLists/OrderListMenu';
 import CreateList from './components/User/OrderingLists/CreateList';
 import ManageList from './components/User/OrderingLists/ManageList';
+import ListConfirmation from './components/User/OrderingLists/ListConfirmation';
 import { auth } from './components/firebase/index';
 import { useState } from 'react';
 import { signOut } from "firebase/auth";
@@ -84,11 +85,15 @@ function signout() {
         />
         <Route 
           path='/createList'
-          element={<CreateList/>}
+          element={<CreateList username={username}/>}
         />
         <Route 
           path='/manageList'
           element={<ManageList/>}
+        />
+        <Route 
+          path='/listConfirmation'
+          element={<ListConfirmation />}
         />
       </Routes>
     </>
