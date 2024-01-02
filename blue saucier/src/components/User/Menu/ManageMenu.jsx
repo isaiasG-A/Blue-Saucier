@@ -4,7 +4,6 @@ import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { db } from '../../firebase';
 import { Link } from 'react-router-dom';
 
-
 function ManageMenu({ username }) {
   const [menus, setMenus] = useState([]);
   const [menuId, setMenuId] = useState([]);
@@ -21,15 +20,20 @@ function ManageMenu({ username }) {
   }, [ username ])
 
   async function deleteMenu(index) {
-    let menu = menuId[index];
-  await (deleteDoc(doc(db, `${username} menus`, menu)))
+    try {
+      let menu = menuId[index];
+      await (deleteDoc(doc(db, `${username} menus`, menu)))
+      setMenus(prevLists =>prevLists.filter((_, i) => i !== index));
+      setMenuId(prevListsIds => prevListsIds.filter((_, i) => i !== index));
+    } catch(error) {
+      console.error("Error deleting list:", error);
+    }
   }
 
   return (
     <div>
       <Link to='/mainMenu'>Main Menu</Link>
       <Link to='/createMenu'>Create Menu</Link>
-
       { 
       menus.map((data, index) => (
        <div key={index} className='menuContainer'>

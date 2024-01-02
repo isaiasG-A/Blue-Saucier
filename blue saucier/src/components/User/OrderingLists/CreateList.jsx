@@ -13,13 +13,7 @@ function CreateList({ username }) {
   const navigate = useNavigate();
 
   async function createList(e) {
-    e.preventDefault();
-
-    console.log("item", item)
-    console.log("quantity", quantity)
-    console.log("unitPrice", unitPrice)
-    console.log("total", total)
-    console.log("cat", category)
+    e.preventDefault();ß
 
    try {
     const docRef = await addDoc(collection(db, `${username} lists`), {
@@ -29,7 +23,6 @@ function CreateList({ username }) {
       unitP: unitPrice,
       tot: total,
     });
-    console.log("Document written with ID: ", docRef.id)
    } catch(e) {
     console.log("Error adding List: ", e)
    }
@@ -45,7 +38,7 @@ function CreateList({ username }) {
   return (
     <div>
       <Link to='/mainMenu'>Main Menu</Link>
-      <Link to='/manageListu'>Manage Lists</Link>
+      <Link to='/manageList'>Manage Lists</Link>
       <form onSubmit={createList}>
         <label>Category</label>
           <select onChange={(e) => setCategory(e.target.value)}>

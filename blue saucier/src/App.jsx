@@ -15,8 +15,9 @@ import OrderListMenu from './components/User/OrderingLists/OrderListMenu';
 import CreateList from './components/User/OrderingLists/CreateList';
 import ManageList from './components/User/OrderingLists/ManageList';
 import ListConfirmation from './components/User/OrderingLists/ListConfirmation';
+import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './components/firebase/index';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { signOut } from "firebase/auth";
 
 function App() {
@@ -24,6 +25,26 @@ function App() {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if(user) {
+          // User is signed in, set the authentication token
+          const userToken = user.getIdToken();
+          setToken(userToken);
+           // You can also set other user-related state here if needed
+           setName(user.displayName || '');
+        } else {
+          // User is signed out, clear the authentication token
+          setToken('');
+          setName('');
+          setUsername('');
+        }
+      });
+      // Clean up the observer on component unmount
+      return () => unsubscribe();
+    }, [])
 
 function signout() {
   signOut(auth).then(() => {
@@ -89,7 +110,7 @@ function signout() {
         />
         <Route 
           path='/manageList'
-          element={<ManageList/>}
+          element={<ManageList username={username}/>}
         />
         <Route 
           path='/listConfirmation'
