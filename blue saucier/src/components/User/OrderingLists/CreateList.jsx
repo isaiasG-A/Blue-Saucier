@@ -13,7 +13,7 @@ function CreateList({ username }) {
   const navigate = useNavigate();
 
   async function createList(e) {
-    e.preventDefault();ß
+    e.preventDefault();
 
    try {
     const docRef = await addDoc(collection(db, `${username} lists`), {
