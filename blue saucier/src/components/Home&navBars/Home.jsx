@@ -7,8 +7,8 @@ function Home() {
       <div className='homeContent'>
         <h1 className='homeTitle'>Blue Saucier</h1>
         <div className='homeBttnsContainer'>
-          <Link class="ui inverted button lftBtn" to='/register'>Register</Link>
-          <Link class="ui inverted button" to='/login'>Login</Link>
+          <Link class="big ui inverted button lftBtn" to='/register'>Register</Link>
+          <Link class="big ui inverted button" to='/login'>Login</Link>
         </div>
       </div>
     </div>

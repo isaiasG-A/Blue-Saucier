@@ -4,6 +4,12 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap');
 
+h1 {
+  min-height: 1rem;
+  font-size: 3rem;
+  margin-bottom: 2%;
+}
+
 h2 {
   text-align-last: center;
 }
@@ -42,7 +48,11 @@ button {
 
 .homeBttnsContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  display: flex;
+  width: 17%;
+  text-align: center;
+  margin-left: 41%;
 }
 
 .lftBtn {
@@ -50,5 +60,48 @@ button {
 }
 
 .loginPage {
-  background-image: url("./images/about3.jpg");
+  background-image: url("./images/logIn2.jpg");
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.formContainer {
+  background-image: url("./images/signUp.jpg");
+  filter: grayscale(100%);
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.regForm {
+  width: 60vw;
+  text-align: center;
+  margin-top: 21vh;
+}
+
+.labelForm {
+  color: white;
+}
+
+.successContainer {
+  background-image: url('./images/bundo-kim-Pb9bUzH1nD8-unsplash.jpg');
+  filter: grayscale(100%);
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.successTxt {
+  margin-bottom: 5vh;
+  padding-top: 44vh;
+  color: white;
+}
+
+.homeBttnContainer {
+  padding: 3vh;
 }
