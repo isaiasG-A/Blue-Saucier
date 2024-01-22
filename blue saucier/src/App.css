@@ -1,6 +1,54 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap');
+
+h2 {
+  text-align-last: center;
+}
+button {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.home{
+  background-image: url("./images/kitchenHome.jpg");
+  filter: grayscale(100%);
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.homeContent {
   text-align: center;
+  margin-top: 63vh;
+  color: white;
+}
+
+.homeBttns {
+  padding: 2% 2%;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  margin-left: 5%;
+}
+
+.homeBttnsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.lftBtn {
+  margin-right: 3%;
+}
+
+.loginPage {
+  background-image: url("./images/about3.jpg");
 }

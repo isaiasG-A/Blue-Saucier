@@ -29,7 +29,7 @@ function login(e) {
 }
 
   return (
-    <div>
+    <div className='loginPage'>
       <Link to='/'>Home</Link>
       <Link to='/about'>About</Link>
       <form onSubmit={login}>
