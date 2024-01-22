@@ -30,26 +30,33 @@ function login(e) {
 
   return (
     <div className='loginPage'>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <form onSubmit={login}>
-        <label>
-          Email:
-          <input 
-            type="email" 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label>
-          Password:
-          <input 
-            type="password" 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <button>Submit</button>
+      <div className='homeBttnContainer'>
+        <Link className='ui inverted button' to='/'>Home</Link>
+      </div>
+      <form className='ui form regFormLog' onSubmit={login}>
+        <div className='fields'  style={{display: 'flex', flexDirection: 'column', marginLeft: '41vw', marginTop: '22v'}}>
+          <div className='field'>
+            <label style={{color: 'white'}}>
+            Email:
+            <input 
+              type="email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          </div>
+          <div className='field'>
+            <label style={{color: 'white'}}>
+            Password:
+            <input 
+              type="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          </div>
+        </div>
+        <button className="ui inverted button regBttn" style={{marginLeft: '42vw'}}>Submit</button>
       </form>
     </div>
   )

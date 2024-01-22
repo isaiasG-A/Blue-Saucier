@@ -105,3 +105,9 @@ button {
 .homeBttnContainer {
   padding: 3vh;
 }
+
+.regFormLog {
+  width: 60vw;
+  text-align: center;
+  margin-top: 11vh;
+}
