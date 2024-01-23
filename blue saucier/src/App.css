@@ -111,3 +111,24 @@ button {
   text-align: center;
   margin-top: 11vh;
 }
+
+.userMenuContainer {
+  background-image: url('./images/menuProfile.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.userMenu {
+  padding-top: 21vh;
+  color: white;
+  text-align: center;
+}
+
+.userMenuOptions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logoutBttn {
+  margin: 2%;
+}
