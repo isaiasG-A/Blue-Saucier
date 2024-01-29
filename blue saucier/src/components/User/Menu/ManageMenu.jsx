@@ -31,21 +31,23 @@ function ManageMenu({ username }) {
   }
 
   return (
-    <div>
-      <Link to='/mainMenu'>Main Menu</Link>
-      <Link to='/createMenu'>Create Menu</Link>
+    <div className='manageMenu'>
+      <Link className='ui inverted button' style={{margin: '1%'}} to='/mainMenu'>Main Menu</Link>
+      <Link className='ui inverted button' style={{margin: '1%'}} to='/createMenu'>Create Menu</Link>
       { 
       menus.map((data, index) => (
-       <div key={index} className='menuContainer'>
-        <h2>Category</h2>
-        <p>{data.cat}</p>
-        <h2>Description</h2>
-        <p>{data.desc}</p>  
-        <h2>Dish</h2>
-        <p>{data.dishName}</p>   
-        <h2>Price</h2> 
-        <p>${data.pricing}</p>
-        <button onClick={() => deleteMenu(index)}>Delete</button>
+       <div key={index} className='manageMenuContainer'>
+        <div className='menuCat'>
+          <h2>Category</h2>
+          <p>{data.cat}</p>
+          <h2>Dish</h2>
+          <p>{data.dishName}</p>  
+          <h2>Description</h2>
+          <p>{data.desc}</p>   
+          <h2>Price</h2> 
+          <p>${data.pricing}</p>
+          <button className='ui inverted red button' style={{marginTop: '8%'}} onClick={() => deleteMenu(index)}>Delete</button>
+        </div>
        </div>
       )) 
     }

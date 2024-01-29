@@ -37,45 +37,47 @@ async function createMenu(e) {
 } 
 
   return (
-    <div>
-      <Link to='/mainMenu'>Main Menu</Link>
-      <Link to='/manageMenu'>Manage Menu</Link>
-      <form onSubmit={createMenu}>
-        <label>Category</label>
-        <select onChange={setCat}>
-          <option></option>
-          <option value={'Apetizer'}>Appetizers</option>
-          <option value={'Breakfast'}>Breakfast</option>
-          <option value={'Lunch'}>Lunch</option>
-          <option value={'Main'}>Main</option>
-          <option value={'Drinks'}>Drinks</option>
-          <option value={'Desserts'}>Desserts</option>
-        </select>
-        <label>
-          Dish:
-          <input 
-            type='text'
-            value={dish}
-            onChange={(e) => setDish(e.target.value)}
-          />
-        </label>
-        <label>
-          Price:
-          <input 
-            type="text" 
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-        </label>
-        <label>
-          Description:
-          <input
-            type='text'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </label>
-        <button>Submit</button>
+    <div className='createMenuContainer'>
+      <Link className='ui inverted button logoutBttn' style={{margin: '1%'}} to='/mainMenu'>Main Menu</Link>
+      <Link className='ui inverted button logoutBttn' style={{margin: '1%'}} to='/manageMenu'>Manage Menu</Link>
+      <form className='ui form menuContainer' onSubmit={createMenu}>
+        <div className='formOptions'>
+          <label style={{fontSize: '1.5rem'}}>Category</label>
+          <select style={{marginBottom: '15%'}} onChange={setCat}>
+            <option></option>
+            <option value={'Apetizer'}>Appetizers</option>
+            <option value={'Breakfast'}>Breakfast</option>
+            <option value={'Lunch'}>Lunch</option>
+            <option value={'Main'}>Main</option>
+            <option value={'Drinks'}>Drinks</option>
+            <option value={'Desserts'}>Desserts</option>
+          </select>
+          <label style={{fontSize: '1.5rem'}}>
+            Dish:
+            <input style={{marginBottom: '15%'}}
+              type='text'
+              value={dish}
+              onChange={(e) => setDish(e.target.value)}
+            />
+          </label>
+          <label style={{fontSize: '1.5rem'}}>
+            Price:
+            <input style={{marginBottom: '15%'}}
+              type="text" 
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </label>
+          <label style={{fontSize: '1.5rem'}}>
+            Description:
+            <input style={{marginBottom: '15%'}}
+              type='text'
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </label>
+          <button className='ui inverted secondary button'>Submit</button>
+        </div>
       </form>
     </div>
   )

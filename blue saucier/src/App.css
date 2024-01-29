@@ -119,7 +119,7 @@ button {
 }
 
 .userMenu {
-  padding-top: 21vh;
+  padding-top: 16vh;
   color: white;
   text-align: center;
 }
@@ -131,4 +131,76 @@ button {
 
 .logoutBttn {
   margin: 2%;
+}
+
+.menuPlanningContainer {
+  background-image: url('./images/listMenu.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.menuPlanningItems {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 18%;
+}
+
+.createMenuContainer {
+  background-image: url('./images/CreateMenu.jpg');
+  background-size:cover;
+  height: 100vh;
+}
+
+.menuContainer {
+  background-image: url('./images/menuBackground.jpg');
+  display: flex;
+  flex-direction: column;
+  width: 39%;
+  text-align: center;
+  margin: 11vh 34vw;
+  height: 81vh;
+}
+
+.formOptions {
+  width: 55%;
+  text-align: center;
+  margin-left: 24%;
+  margin-top: 10%;
+}
+
+.menuConfirmation {
+  background-image: url('./images/createMenuOption.jpg');
+  background-size:cover;
+  height: 100vh;
+  filter: grayscale();
+}
+
+.menuConfirmationMssg {
+  background-color: black;
+    width: 42%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3%;
+    color: white;
+}
+
+.manageMenuContainer {
+  background-image: url('./images/menuBackground.jpg');
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  text-align: center;
+  margin: 11vh 34vw;
+  height: 67vh;
+}
+
+.menuCat {
+  color: white;
+  padding-top: 11%;
+  padding-bottom: 18%;
+}
+
+.manageMenu{
+  background-image: url('./images/menuViewList.jpg');
+  background-size:cover;
 }

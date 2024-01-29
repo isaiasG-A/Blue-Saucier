@@ -9,7 +9,7 @@ function MainMenu({name, token, signout }) {
 
   return (
     <div className='userMenuContainer'>
-      <button className='ui inverted button logoutBttn' onClick={signout}>Logout</button>
+      <button className='ui inverted button logoutBttn' style={{margin: '1%'}} onClick={signout}>Logout</button>
       <div className='userMenu'>
      <h1>Hello, {name}</h1>
 
