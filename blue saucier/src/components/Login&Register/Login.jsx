@@ -34,6 +34,7 @@ function login(e) {
         <Link className='ui inverted button' to='/'>Home</Link>
       </div>
       <form className='ui form regFormLog' onSubmit={login}>
+        <div className='loginData'>
         <div className='fields'  style={{display: 'flex', flexDirection: 'column', marginLeft: '41vw', marginTop: '22v'}}>
           <div className='field'>
             <label style={{color: 'white'}}>
@@ -56,7 +57,8 @@ function login(e) {
           </label>
           </div>
         </div>
-        <button className="ui inverted button regBttn" style={{marginLeft: '42vw'}}>Submit</button>
+        <button className="ui secondary button regBttn" style={{marginLeft: '42vw'}}>Submit</button>
+        </div>
       </form>
     </div>
   )

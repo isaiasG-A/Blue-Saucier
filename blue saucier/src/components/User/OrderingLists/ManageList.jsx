@@ -35,23 +35,26 @@ function ManageList({ username }) {
   }
 
   return (
-    <div>
-      <Link to='/mainMenu'>Main Menu</Link>
-      <Link to='/createList'>Create List</Link>
+    <div className='listContainer'>
+      <Link className='ui inverted button' style={{margin: '1%'}} to='/mainMenu'>Main Menu</Link>
+      <Link className='ui inverted button' style={{margin: '1%'}} to='/createList'>Create List</Link>
       {
         lists.map((data, index) => (
-          <div key={listId[index]} className='listContainer'>
-            <h2>Category</h2>
-            <p>{data.categ}</p>
-            <h2>Item</h2>
-            <p>{data.item}</p>
-            <h2>Quantity</h2>
-            <p>{data.qtty}</p>
-            <h2>Price</h2>
-            <p>${data.unitP}</p>
-            <h2>Total</h2>
-            <p>${data.tot}</p>
-            <button onClick={async () => await deleteList(index)}>Delete</button>          </div>
+          <div key={listId[index]}>
+            <div className='listCat'>
+              <h2>Category</h2>
+              <p>{data.categ}</p>
+              <h2>Item</h2>
+              <p>{data.itm}</p>
+              <h2>Quantity</h2>
+              <p>{data.qtty}</p>
+              <h2>Price</h2>
+              <p>${data.unitP}</p>
+              <h2>Total</h2>
+              <p>${data.tot}</p>
+              <button className='ui button' style={{width: '38%', marginLeft: '31%'}} onClick={async () => await deleteList(index)}>Delete</button>
+            </div>
+          </div>
         ))
       }
     </div>

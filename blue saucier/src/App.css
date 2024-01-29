@@ -157,7 +157,7 @@ button {
   flex-direction: column;
   width: 39%;
   text-align: center;
-  margin: 11vh 34vw;
+  margin: 3vh 34vw;
   height: 81vh;
 }
 
@@ -177,11 +177,11 @@ button {
 
 .menuConfirmationMssg {
   background-color: black;
-    width: 42%;
-    text-align: center;
-    margin: 0 auto;
-    padding: 3%;
-    color: white;
+  width: 42%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3%;
+  color: white;
 }
 
 .manageMenuContainer {
@@ -203,4 +203,65 @@ button {
 .manageMenu{
   background-image: url('./images/menuViewList.jpg');
   background-size:cover;
+  height: 100vh;
+}
+
+.orderListMenuContainer {
+  background-image: url('./images/about.jpg');
+  background-size:cover;
+  height: 100vh;
+}
+
+.orderListMenuItems {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 18%;
+}
+
+.createListContainer {
+  background-image: url('./images/about3.jpg');
+  height: 100vh;
+}
+
+.createListOptions {
+  width: 25%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3%;
+  margin-top: 5%;
+  background: black;
+  color: white;
+}
+
+.listConfirmationContainer {
+  background-image: url('./images/about1.jpg');
+  height: 100vh;
+}
+
+.confirmationContainer {
+  text-align: center;
+  padding-top: 7%;
+  background-color: black;
+  width: 40%;
+  color: white;
+  margin-left: 28%;
+  height: 33vh;
+}
+
+.listContainer {
+  background-image: url('./images/tamanna-rumee-B_bx1oKI5kg-unsplash.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.listCat {
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  text-align: center;
+  margin: 11vh 37vw;
+  height: 74vh;
+  padding-top: 2%;
 }

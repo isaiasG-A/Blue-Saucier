@@ -36,12 +36,12 @@ function CreateList({ username }) {
   }
 
   return (
-    <div>
-      <Link to='/mainMenu'>Main Menu</Link>
-      <Link to='/manageList'>Manage Lists</Link>
-      <form onSubmit={createList}>
+    <div className='createListContainer'>
+      <Link className='ui inverted button' style={{margin: '.5%'}} to='/mainMenu'>Main Menu</Link>
+      <Link className='ui inverted button'to='/manageList'>Manage Lists</Link>
+      <form className='ui form createListOptions' onSubmit={createList}>
         <label>Category</label>
-          <select onChange={(e) => setCategory(e.target.value)}>
+          <select style={{marginBottom: '6%'}} onChange={(e) => setCategory(e.target.value)}>
           <option></option>
           <option value={'Produce'}>Produce</option>
           <option value={'Herbs'}>Herbs</option>
@@ -54,7 +54,8 @@ function CreateList({ username }) {
         </select>
         <label>
           Item Name:
-          <input 
+          <input
+          style={{marginBottom: '6%'}} 
           type="text" 
           value={item}
           onChange={(e) => setItem(e.target.value)}
@@ -63,6 +64,7 @@ function CreateList({ username }) {
         <label>
           Quantity:
           <input 
+            style={{marginBottom: '6%'}} 
             type="text" 
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
@@ -71,6 +73,7 @@ function CreateList({ username }) {
         <label>
           Unit Price $
           <input 
+            style={{marginBottom: '6%'}} 
             type="text" 
             value={unitPrice}
             onChange={(e) => setUnitPrice(e.target.value)}
@@ -79,12 +82,13 @@ function CreateList({ username }) {
         <label>
           Total $
           <input 
+            style={{marginBottom: '6%'}} 
             type="text" 
             value={total}
             onChange={(e) => setTotal(e.target.value)}
             />
         </label>
-        <button>Submit</button>
+        <button className='ui button' style={{marginTop: '5%'}}>Submit</button>
       </form>
     </div>
   )
