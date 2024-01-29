@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase/index';
 
-function Login({setName, setToken, setUsername}) {
+function Login({ setName, setToken, setUsername }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -11,7 +11,11 @@ function Login({setName, setToken, setUsername}) {
 function login(e) {
   e.preventDefault();
 
-  signInWithEmailAndPassword(auth, email, password)
+
+  if(email === '' || password === '') {
+    return null;
+  } else {
+    signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
       
@@ -26,6 +30,7 @@ function login(e) {
       console.log(errorMessage)
     });
     navigate('/mainMenu')
+  }
 }
 
   return (
