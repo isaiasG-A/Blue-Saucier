@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
 }
@@ -265,3 +266,18 @@ button {
   height: 74vh;
   padding-top: 2%;
 }
+
+/* MEDIA QUERIES*/
+
+@media screen and (max-width: 1000px)  {
+
+  .homeContent {
+    margin-top: 47vh 
+  }
+
+ .homeBttnsContainer {
+  justify-content: center;
+    align-items: center;
+ }
+}
+

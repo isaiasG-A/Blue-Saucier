@@ -46,6 +46,7 @@ function Register() {
       <div className='homeBttnContainer'>
         <Link className='ui inverted button' to='/'>Home</Link>
       </div>
+      <div className='formInputsContainer'>
       <form className="ui form regForm" onSubmit={register}>
         <div className='fields' style={{display: 'flex', flexDirection: 'column', marginLeft: '41vw', marginTop: '22v'}}>
           <div className='field'>
@@ -90,8 +91,9 @@ function Register() {
             </label>
           </div>       
         </div>
-        <button className="ui inverted button regBttn" style={{marginLeft: '42vw'}}>Submit</button>
+        <button className="ui secondary button regBttn" style={{marginLeft: '42vw'}}>Submit</button>
       </form>
+      </div>
     </div>
     )
   }
