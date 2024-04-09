@@ -5,7 +5,7 @@ import menuPlanning from '../../images/menuCreate.jpg';
 import orderingLists from '../../images/menuList.jpg';
 import googleCalendar from '../../images/googleCalendar.png';
 
-function MainMenu({name, token, signout }) {
+function MainMenu({name, signout }) {
 
   return (
     <div className='userMenuContainer'>
