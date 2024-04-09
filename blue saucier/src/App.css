@@ -67,6 +67,15 @@ button {
   height: 100vh;
 }
 
+.loginContainer {
+  margin-left: 34%;
+  margin-top: 4%;
+}
+
+.loginBttn {
+  margin-left: 17%;
+}
+
 .formContainer {
   background-image: url("./images/signUp.jpg");
   filter: grayscale(100%);
