@@ -1,5 +1,9 @@
 import './App.css'
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './components/firebase/index';
+import { useState, useEffect } from 'react';
+import { signOut } from "firebase/auth";
 
 import Home from './components/Home&navBars/Home';
 import Login from './components/Login&Register/Login';
@@ -15,10 +19,6 @@ import OrderListMenu from './components/User/OrderingLists/OrderListMenu';
 import CreateList from './components/User/OrderingLists/CreateList';
 import ManageList from './components/User/OrderingLists/ManageList';
 import ListConfirmation from './components/User/OrderingLists/ListConfirmation';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './components/firebase/index';
-import { useState, useEffect } from 'react';
-import { signOut } from "firebase/auth";
 
 function App() {
   const [token, setToken] = useState('');
